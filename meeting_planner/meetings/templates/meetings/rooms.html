@@ -1,0 +1,8 @@
+{%extends "base.html"%}
+
+{%block title%}Room: {{Room.name}}{%endblock%}
+{%block content%}
+<h1>{{Room.name}}</h1>
+<p>The '{{Room.name}}' is on floor {{Room.floor}} in Room number {{Room.room_number}}</p>
+<footer><a href = "{% url 'home' %}"> Go to home page</a></footer>
+{%endblock%}

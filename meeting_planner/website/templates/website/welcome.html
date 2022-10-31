@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block title%} Welcome {%endblock%}
+{%block content%}
+    <h1>Welcome to the Meeting Planner</h1>
+    <p>
+        This is a practice application for learning Django
+        <em>Django web app</em>
+        <a href = "{% url 'about'%}">About</a>
+    </p>
+
+    <img src = "{% static 'website/giphy.gif' %}", width = "100px">
+
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href = "{% url 'detail' meeting.id %}">
+                    {{meeting.title}}
+                </a>
+            </li>
+        {%endfor%}
+    </ul>
+
+
+<h2>Rooms</h2>
+    <ul>
+        {% for room in Room %}
+            <li>
+                <a href = "{% url 'room' room.id %}">
+                    {{room.name}}
+                </a>
+            </li>
+        {%endfor%}
+    </ul>
+
+{%endblock%}
